@@ -66,10 +66,7 @@ class UsersController < ApplicationController
   # GET /users/createtests
   # GET /users/createtests.json
   def createtests
-   respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-	  end
+    @users = User.all
   end
   
   private
