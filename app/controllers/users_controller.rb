@@ -37,8 +37,8 @@ class UsersController < ApplicationController
     end
   end
   
-  # POST /users
-  # POST /users.json
+  # POST /users/1
+  # POST /users/1.json
   def createTest
     i = 1000
    while i > 0
