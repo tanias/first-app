@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
   if params[:recCount] != nil
-   puts params[:recCount].inspect
       i = params[:recCount]
 	  puts i.inspect
    while i > 0
