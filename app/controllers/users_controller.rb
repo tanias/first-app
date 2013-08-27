@@ -36,6 +36,20 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  # POST /users
+  # POST /users.json
+  def createTest
+    i = 1000
+   while i > 0
+       @user = User.new
+       @user.name = "A#{i}"
+       @user.email = "A#{i}@testmail.com"       
+       @user.save
+       i = i - 1
+   end
+   format.html { render action: 'index' }
+  end
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
