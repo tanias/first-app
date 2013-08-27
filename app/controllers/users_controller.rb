@@ -16,8 +16,7 @@ class UsersController < ApplicationController
   def new
   if params[:recCount] != nil
       i = Integer(params[:recCount])
-	  puts i.inspect
-   while i > 0
+	while i > 0
        @user = User.new
        @user.name = "A#{i}"
        @user.email = "A#{i}@testmail.com"       
