@@ -63,20 +63,13 @@ class UsersController < ApplicationController
     end
   end
   
-  # POST /users/create_tests
-  # POST /users/create_tests.json
-  def create_tests
-    @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @user }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+  # GET /users/createtests
+  # GET /users/createtests.json
+  def createtests
+   respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
+	  end
   end
   
   private
