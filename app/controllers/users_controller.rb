@@ -19,11 +19,10 @@ class UsersController < ApplicationController
       i = 10
 	  puts i.inspect
    while i > 0
-       @book = Book.new
-       @book.title = "Book #{i}"
-       @book.author = "Author #{i}"
-       @book.description = "The description for book #{i}"
-       @book.save
+       @user = User.new
+       @user.name = "A#{i}"
+       @user.email = "A#{i}@testmail.com"       
+       @user.save
        i = i - 1
    end
     respond_to do |format|
