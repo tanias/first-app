@@ -37,18 +37,7 @@ class UsersController < ApplicationController
     end
   end
   
-  # GET /users/createtest
-  def createtest
-    i = 1000
-   while i > 0
-       @user = User.new
-       @user.name = "A#{i}"
-       @user.email = "A#{i}@testmail.com"       
-       @user.save
-       i = i - 1
-   end
-   format.html { render action: 'index' }
-  end
+  
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
@@ -73,7 +62,23 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # POST /users/create_tests
+  # POST /users/create_tests.json
+  def create_tests
+    @user = User.new(user_params)
 
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @user }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
