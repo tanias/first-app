@@ -37,8 +37,8 @@ class UsersController < ApplicationController
     end
   end
   
-  # GET /users/createTest
-  def createTest
+  # GET /users/createtest
+  def createtest
     i = 1000
    while i > 0
        @user = User.new
