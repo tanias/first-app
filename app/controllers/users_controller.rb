@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def new
   if params[:recCount] != nil
    puts params[:recCount].inspect
-      i = 10
+      i = params[:recCount]
 	  puts i.inspect
    while i > 0
        @user = User.new
