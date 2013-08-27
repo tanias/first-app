@@ -14,7 +14,23 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+  if params[:recCount] != nil
+      i = 10
+   while i > 0
+       @book = Book.new
+       @book.title = "Book #{i}"
+       @book.author = "Author #{i}"
+       @book.description = "The description for book #{i}"
+       @book.save
+       i = i - 1
+   end
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
+	 end
+   else   
+     @user = User.new
+   end
   end
 
   # GET /users/1/edit
@@ -63,14 +79,6 @@ class UsersController < ApplicationController
     end
   end
   
-  # GET /users/1/new
-  # GET /users/1/new.json
-  def createtests
-    respond_to do |format|
-      format.html { redirect_to users_url }
-      format.json { head :no_content }
-    end
-  end
   
   private
     # Use callbacks to share common setup or constraints between actions.
