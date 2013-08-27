@@ -15,7 +15,9 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
   if params[:recCount] != nil
+   puts params[:recCount].inspect
       i = 10
+	  puts i.inspect
    while i > 0
        @book = Book.new
        @book.title = "Book #{i}"
