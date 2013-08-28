@@ -15,6 +15,7 @@ gem 'jquery-rails', '2.2.1'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'newrelic_rpm'
+gem 'will_paginate', '~> 3.0.0'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
